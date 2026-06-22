@@ -1,238 +1,117 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GAR-BOT | K2Aley</title>
-  <style>
-    :root {
-      --ink: #15171c;
-      --muted: #596171;
-      --line: #d8dee8;
-      --blue: #139de2;
-      --yellow: #f4b92a;
-      --panel: #f7f9fc;
-      --white: #ffffff;
-    }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="GAR-BOT is K2Aley's guided automation and repair bot for robot diagnostics, 3D printing support, tune-ups, and shop workflows.">
+    <title>GAR-BOT | K2Aley</title>
+    <link rel="icon" type="image/png" href="../assets/logoK2Aley.png">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="Back to K2Aley home">
+        <img class="brand-logo" src="../assets/logoK2Aley.png" alt="">
+        <span>K2Aley GAR-BOT</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#console">Console</a>
+        <a href="#modules">Modules</a>
+        <a href="#flow">Flow</a>
+        <a href="../index.html">K2Aley</a>
+      </nav>
+    </header>
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      line-height: 1.5;
-    }
-
-    header {
-      border-bottom: 1px solid var(--line);
-      background: white;
-    }
-
-    nav {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 16px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .brand {
-      font-weight: 900;
-      font-size: 20px;
-      text-decoration: none;
-      color: var(--ink);
-    }
-
-    .brand span {
-      color: var(--blue);
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 42px;
-      padding: 10px 16px;
-      border-radius: 6px;
-      background: var(--ink);
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .hero {
-      min-height: 70vh;
-      display: grid;
-      align-items: center;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.98), rgba(255,255,255,0.78)),
-        repeating-linear-gradient(0deg, transparent 0, transparent 34px, rgba(19,157,226,0.08) 35px, transparent 36px),
-        #eef5fb;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .hero-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 64px 24px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
-      gap: 42px;
-      align-items: center;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(54px, 9vw, 112px);
-      line-height: 0.9;
-      letter-spacing: 0;
-    }
-
-    .kicker {
-      margin: 0 0 12px;
-      font-weight: 900;
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: 0;
-    }
-
-    .hero p {
-      margin: 22px 0 0;
-      max-width: 620px;
-      font-size: 20px;
-      color: var(--muted);
-    }
-
-    .actions {
-      margin-top: 30px;
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .button.alt {
-      background: white;
-      color: var(--ink);
-      border: 1px solid var(--line);
-    }
-
-    .logo {
-      width: min(100%, 520px);
-      height: auto;
-      filter: drop-shadow(0 20px 32px rgba(21, 23, 28, 0.16));
-    }
-
-    section {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 54px 24px;
-    }
-
-    h2 {
-      margin: 0 0 20px;
-      font-size: 32px;
-      line-height: 1.1;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .card {
-      min-height: 150px;
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-    }
-
-    .card h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-
-    .card p {
-      margin: 0;
-      color: var(--muted);
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 28px 24px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    @media (max-width: 760px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding-top: 44px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 58px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <a class="brand" href="../index.html">K2Aley <span>/ GAR-BOT</span></a>
-      <a class="button" href="mailto:hello@k2aley.com">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <div class="hero">
-      <div class="hero-inner">
-        <div>
-          <p class="kicker">Guided Automation and Repair Bot</p>
-          <h1>GAR-BOT</h1>
-          <p>A K2Aley product for guided diagnostics, printer tune-ups, maintenance records, and repeatable workshop repair workflows.</p>
-          <div class="actions">
-            <a class="button" href="mailto:hello@k2aley.com">Request GAR-BOT</a>
-            <a class="button alt" href="../index.html">Back to K2Aley</a>
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <img src="../assets/garbot-two-claw.png" alt="GAR-BOT two-claw rover prototype" class="hero-image">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <p class="eyebrow">Guided Automation and Repair Bot</p>
+          <h1 id="hero-title">GAR-BOT</h1>
+          <p class="hero-copy">
+            A K2Aley product concept for robot build documentation, 3D printer tune-ups,
+            diagnostics, repair steps, and maintenance records.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#console">Open Console</a>
+            <a class="button secondary" href="#modules">Modules</a>
+            <a class="button secondary" href="../index.html">Back to K2Aley</a>
           </div>
         </div>
-        <img class="logo" src="../k2aley-logo.png" alt="K2Aley GAR-BOT 3D Printing logo">
-      </div>
-    </div>
+      </section>
 
-    <section>
-      <h2>Built for Real Shop Work</h2>
-      <div class="grid">
-        <article class="card">
-          <h3>Diagnose</h3>
-          <p>Organized checks help narrow machine problems before parts or time are wasted.</p>
-        </article>
-        <article class="card">
-          <h3>Guide</h3>
-          <p>Repair and calibration steps stay clear, repeatable, and easy to follow.</p>
-        </article>
-        <article class="card">
-          <h3>Track</h3>
-          <p>Maintenance notes, tune-up values, and service history stay connected to the machine.</p>
-        </article>
-      </div>
-    </section>
-  </main>
+      <section class="status-strip" aria-label="GAR-BOT highlights">
+        <div><strong>01</strong><span>capture symptoms</span></div>
+        <div><strong>02</strong><span>diagnose likely cause</span></div>
+        <div><strong>03</strong><span>repair or tune</span></div>
+        <div><strong>04</strong><span>record the fix</span></div>
+      </section>
 
-  <footer>
-    GAR-BOT is a product of K2Aley LLC.
-  </footer>
-</body>
+      <section id="console" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">GAR-BOT Console</p>
+          <h2>Choose a module and generate a first-pass plan.</h2>
+        </div>
+        <div class="console">
+          <div>
+            <label for="module">Workflow module</label>
+            <select id="module">
+              <option value="tune">Printer tune-up</option>
+              <option value="repair">Repair documentation</option>
+              <option value="maintenance">Maintenance tracker</option>
+              <option value="automation">Automation workflow</option>
+            </select>
+          </div>
+          <div class="terminal" id="terminal" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="modules" class="section systems">
+        <div class="section-heading">
+          <p class="eyebrow">Modules</p>
+          <h2>Built like the GAR-BOT project package.</h2>
+        </div>
+        <div class="system-grid">
+          <article><h3>Diagnose</h3><p>Organized checks narrow machine problems before parts or time are wasted.</p></article>
+          <article><h3>Guide</h3><p>Repair and calibration steps stay clear, repeatable, and easy to follow.</p></article>
+          <article><h3>Track</h3><p>Maintenance notes, tune-up values, and service history stay connected to the machine.</p></article>
+          <article><h3>Package</h3><p>Docs, links, images, and files stay gathered in a build-ready structure.</p></article>
+        </div>
+      </section>
+
+      <section id="flow" class="section image-band">
+        <img src="../assets/claw-reference.jpeg" alt="Two-claw mechanism reference">
+        <div>
+          <p class="eyebrow">Operating Flow</p>
+          <h2>Capture, diagnose, repair, and record.</h2>
+          <p>
+            GAR-BOT applies the same system to a robot build, 3D printer service call,
+            or shop maintenance routine: see the issue, follow the checks, document the result.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>GAR-BOT is a product of K2Aley LLC.</span>
+      <span>Dry-use only until exposed electronics are enclosed and leak-tested.</span>
+    </footer>
+
+    <script>
+      const plans = {
+        tune: "GAR-BOT / PRINTER TUNE-UP\\n- Inspect motion system\\n- Verify bed level and Z-offset\\n- Calibrate extrusion and flow\\n- Run first-layer and cube test\\n- Save final values",
+        repair: "GAR-BOT / REPAIR DOCUMENTATION\\n- Record symptom and machine state\\n- Capture photos or notes\\n- Write diagnostic decision path\\n- Document repair steps\\n- Add verification test",
+        maintenance: "GAR-BOT / MAINTENANCE TRACKER\\n- Log service date\\n- Check belts, wheels, hotend, and fans\\n- Record worn parts\\n- Schedule next service\\n- Store calibration notes",
+        automation: "GAR-BOT / AUTOMATION WORKFLOW\\n- Map repeated task\\n- Identify trigger and inputs\\n- Define outputs\\n- Build checklist or script path\\n- Test and revise"
+      };
+      const moduleSelect = document.querySelector("#module");
+      const terminal = document.querySelector("#terminal");
+      function renderPlan() {
+        terminal.textContent = plans[moduleSelect.value];
+      }
+      moduleSelect.addEventListener("change", renderPlan);
+      renderPlan();
+    </script>
+  </body>
 </html>
