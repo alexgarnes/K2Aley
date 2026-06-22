@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GAR-BOT | K2Aley</title>
+  <style>
+    :root {
+      --ink: #15171c;
+      --muted: #596171;
+      --line: #d8dee8;
+      --blue: #139de2;
+      --yellow: #f4b92a;
+      --panel: #f7f9fc;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--white);
+      line-height: 1.5;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: white;
+    }
+
+    nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 900;
+      font-size: 20px;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .brand span {
+      color: var(--blue);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: 70vh;
+      display: grid;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.98), rgba(255,255,255,0.78)),
+        repeating-linear-gradient(0deg, transparent 0, transparent 34px, rgba(19,157,226,0.08) 35px, transparent 36px),
+        #eef5fb;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 24px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.9fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(54px, 9vw, 112px);
+      line-height: 0.9;
+      letter-spacing: 0;
+    }
+
+    .kicker {
+      margin: 0 0 12px;
+      font-weight: 900;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      margin: 22px 0 0;
+      max-width: 620px;
+      font-size: 20px;
+      color: var(--muted);
+    }
+
+    .actions {
+      margin-top: 30px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button.alt {
+      background: white;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+
+    .logo {
+      width: min(100%, 520px);
+      height: auto;
+      filter: drop-shadow(0 20px 32px rgba(21, 23, 28, 0.16));
+    }
+
+    section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 54px 24px;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      min-height: 150px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 760px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding-top: 44px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 58px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="brand" href="../index.html">K2Aley <span>/ GAR-BOT</span></a>
+      <a class="button" href="mailto:hello@k2aley.com">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="kicker">Guided Automation and Repair Bot</p>
+          <h1>GAR-BOT</h1>
+          <p>A K2Aley product for guided diagnostics, printer tune-ups, maintenance records, and repeatable workshop repair workflows.</p>
+          <div class="actions">
+            <a class="button" href="mailto:hello@k2aley.com">Request GAR-BOT</a>
+            <a class="button alt" href="../index.html">Back to K2Aley</a>
+          </div>
+        </div>
+        <img class="logo" src="../k2aley-logo.png" alt="K2Aley GAR-BOT 3D Printing logo">
+      </div>
+    </div>
+
+    <section>
+      <h2>Built for Real Shop Work</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Diagnose</h3>
+          <p>Organized checks help narrow machine problems before parts or time are wasted.</p>
+        </article>
+        <article class="card">
+          <h3>Guide</h3>
+          <p>Repair and calibration steps stay clear, repeatable, and easy to follow.</p>
+        </article>
+        <article class="card">
+          <h3>Track</h3>
+          <p>Maintenance notes, tune-up values, and service history stay connected to the machine.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    GAR-BOT is a product of K2Aley LLC.
+  </footer>
+</body>
+</html>
