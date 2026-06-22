@@ -1,0 +1,11 @@
+# Local/private business files
+Formation/
+Tax/
+Banking/
+Records/
+*.zip
+*.pdf
+*.docx
+*.xlsx
+.DS_Store
+Thumbs.db
